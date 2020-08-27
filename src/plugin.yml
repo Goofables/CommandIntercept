@@ -1,0 +1,42 @@
+name: CommandIntercept
+version: Alpha_0.1
+author: Goofables
+main: us.matrixcraft.CommandIntercept.CommandIntercept
+description: Intercept commands.
+commands:
+  intercept:
+    description: Intercept commands.
+    usage: /<command> <player|off>
+    permission: CommandIntercept.intercept
+  allow:
+    description: Allow an intercepted command.
+    alias: [a]
+    usage: Usage /<command> <id>
+    permission: CommandIntercept.allow
+  deny:
+    description: Deny an intercepted command.
+    alias: [d]
+    usage: Usage /<command> <id>
+    permission: CommandIntercept.deny
+  sdeny:
+    description: Silent deny an intercepted command.
+    alias: [sd]
+    usage: Usage /<command> <id>
+    permission: CommandIntercept.deny
+permissions:
+  CommandIntercept.*:
+    descritpion: All permissions for CommandIntercept.
+    default: op
+    children:
+      CommandIntercept.intercept: true
+      CommandIntercept.allow: true
+      CommandIntercept.deny: true
+  CommandIntercept.intercept:
+    descritpion: Allows use of /intercept.
+    default: op
+  CommandIntercept.allow:
+    descritpion: Allows use of /allow.
+    default: op
+  CommandIntercept.deny:
+    descritpion: Allows use of /deny.
+    default: op
